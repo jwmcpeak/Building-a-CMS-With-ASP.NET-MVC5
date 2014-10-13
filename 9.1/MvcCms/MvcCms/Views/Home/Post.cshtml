@@ -1,0 +1,11 @@
+﻿@model MvcCms.Models.Post
+
+@{
+    ViewBag.Title = "Post";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    ViewBag.IsIndex = false;
+}
+
+@Html.Partial("_renderPost", Model)
+

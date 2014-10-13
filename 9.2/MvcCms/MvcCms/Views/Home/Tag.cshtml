@@ -1,0 +1,11 @@
+﻿@model IEnumerable<MvcCms.Models.Post>
+@{
+    ViewBag.Title = "Tag";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    ViewBag.IsIndex = true;
+}
+
+<h2>Posts Tagged with @ViewBag.Tag</h2>
+
+@Html.Raw(string.Join("<hr/>", Model.Select(p => Html.Partial("_renderPost", p))))

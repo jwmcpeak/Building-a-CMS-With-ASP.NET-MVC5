@@ -1,0 +1,15 @@
+﻿@model MvcCms.Models.Post
+
+
+@if (ViewBag.IsIndex)
+{
+    <h2>@Html.ActionLink(Model.Title, "post", new {controller = "home", postId = Model.Id })</h2>
+}
+else
+{
+    <h2>@Model.Title</h2>
+}
+
+<p>@Html.Raw(Model.Content)</p>
+<p>By: @Model.Author.DisplayName</p>
+<p>Tags: @Html.Partial("_renderTags", Model.Tags)</p>

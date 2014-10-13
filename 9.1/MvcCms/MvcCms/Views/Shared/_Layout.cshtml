@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/Site.css" rel="stylesheet" />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    @{
+                        Html.RenderAction("AuthenticationLink", new { controller = "admin", area = "admin" });                        
+                    }
+                </ul>
+
+            </div>
+        </div>
+    </div>
+    <div>
+        @RenderBody()
+    </div>
+    <script src="~/js/jquery-2.1.1.min.js"></script>
+    <script src="~/js/jquery-ui.min-1.11.1.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

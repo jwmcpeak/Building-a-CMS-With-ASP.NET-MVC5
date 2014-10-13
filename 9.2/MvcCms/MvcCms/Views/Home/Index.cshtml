@@ -1,0 +1,23 @@
+﻿@model IEnumerable<MvcCms.Models.Post>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    ViewBag.IsIndex = true;
+}
+
+<h2>Index</h2>
+
+@Html.Raw(string.Join("<hr/>", Model.Select(p => Html.Partial("_renderPost", p))))
+
+@if (ViewBag.PreviousPage > 0)
+{
+    @Html.ActionLink("Previous Page", "page", new { controller = "home", page = ViewBag.PreviousPage })
+}
+
+&nbsp;
+
+@if (ViewBag.NextPage > -1)
+{
+    @Html.ActionLink("Next Page", "page", new { controller = "home", page = ViewBag.NextPage })
+}
