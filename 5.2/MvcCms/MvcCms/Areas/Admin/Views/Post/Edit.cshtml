@@ -1,0 +1,9 @@
+﻿@model MvcCms.Models.Post
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Admin/Views/Post/_PostLayout.cshtml";
+}
+
+<h2>Edit</h2>
+
+@Html.Partial("_postForm", Model)
